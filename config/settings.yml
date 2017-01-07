@@ -1,0 +1,12 @@
+development:
+  host: localhost
+  port: 3030
+  canvas_class: Rectangle
+  canvas_opts:
+    width: 3
+    height: 4
+
+  printer_class: SDL
+  printer_opts:
+
+production:

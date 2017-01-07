@@ -8,7 +8,7 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup
 
 
 RUN apt-get update
-RUN apt-get -y install build-essential vim
+RUN apt-get -y install build-essential libsdl1.2-dev vim
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
