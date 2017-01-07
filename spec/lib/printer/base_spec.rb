@@ -1,6 +1,6 @@
 module Printer
   describe Base do
-    subject { described_class.new(canvas: canvas) }
+    subject { described_class.new(canvas: canvas, logger: nil) }
 
     let(:canvas) { double }
 

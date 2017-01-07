@@ -13,7 +13,7 @@ module Canvas
     end
 
     def pixels
-      raise NotImplementedError
+      Hash[pixel_coordinates.map { |pc| [pc, default_pixel] }]
     end
 
     def set_pixel(x, y, pixel)
@@ -22,10 +22,6 @@ module Canvas
 
     # TODO: extract serialize and deserialize to separate classes
     def serialize
-      serializable_hash = pixels.merge(pixels) do |_, v|
-        v.to_a
-      end
-  
       MessagePack.pack(serializable_hash)
     end
   
@@ -37,6 +33,19 @@ module Canvas
   
     def ==(other)
       pixels == other.pixels
+    end
+
+    def serializable_hash
+      pixels.merge(pixels) do |_, v|
+        v.to_a
+      end
+ 
+    end
+
+    private
+
+    def pixel_coordinates
+      raise NotImplementedError
     end
  
   end

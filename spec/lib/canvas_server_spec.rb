@@ -14,16 +14,18 @@ describe CanvasServer do
     Celluloid.shutdown
   end
 
-  let(:host) { "localhost" }
-  let(:port) { 3030 }
-  let(:canvas) { Canvas::Rectangle.new(opts: { width: 2, height: 3 }) }
-  let(:printer) { TestPrinter.new(canvas: canvas) }
+  let(:host)    { "localhost" }
+  let(:port)    { 3030 }
+  let(:canvas)  { Canvas::Rectangle.new(opts: { width: 2, height: 3 }) }
+  let(:printer) { TestPrinter.new(canvas: canvas, logger: logger) }
+  let(:logger)  { Logger.new(nil) }
 
   subject do 
     described_class.new(
       host:    host, 
       port:    port, 
-      printer: printer
+      printer: printer,
+      logger:  logger
     ) 
   end
   

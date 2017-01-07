@@ -8,14 +8,14 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup
 
 
 RUN apt-get update
-RUN apt-get -y install build-essential libsdl1.2-dev vim
+RUN apt-get -y install build-essential vim
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN bundle install --deployment
+RUN bundle install --deployment --without development test
 
 COPY . /usr/src/app
 

@@ -45,7 +45,10 @@ module Canvas
 
 
       it "changes the canvas" do
-        message = other_canvas.serialize
+        pixels = other_canvas.pixels
+        message = pixels.merge(pixels) do |_, v|
+          v.to_a
+        end
         subject.deserialize(message)
 
         expect(subject).to eq other_canvas

@@ -30,6 +30,7 @@ class CanvasServer
 #  rescue Exception => ex
 #    ap ex
 #    ap ex.backtrace
+#    binding.pry
 #    raise ex
   end
 

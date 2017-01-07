@@ -11,7 +11,9 @@ gem 'celluloid-io'
 
 gem 'msgpack'
 
-gem 'rubysdl'
+group :development do
+  gem 'rubysdl'
+end
 
 group :test do
   gem 'rspec-retry'

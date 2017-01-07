@@ -10,3 +10,13 @@ development:
   printer_opts:
 
 production:
+  host: localhost
+  port: 3030
+  canvas_class: Stairs 
+  canvas_opts:
+
+  printer_class: Stairs
+  printer_opts:
+
+
+
