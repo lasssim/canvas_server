@@ -1,5 +1,4 @@
 require_relative 'printer/base'
-
 require_relative 'printer/stairs'
 
 if ENV["APP_ENV"] == "development"
