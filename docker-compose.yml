@@ -4,6 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.codeship
+    cached: true
     environment:
       - APP_ENV=test
     command: bundle exec rspec spec
