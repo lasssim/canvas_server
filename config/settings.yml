@@ -9,6 +9,18 @@ development:
   printer_class: SDL
   printer_opts:
 
+test:
+  host: localhost
+  port: 3030
+  canvas_class: Rectangle
+  canvas_opts:
+    width: 3
+    height: 4
+
+  printer_class: Stairs
+  printer_opts:
+
+
 production:
   host: localhost
   port: 3030
