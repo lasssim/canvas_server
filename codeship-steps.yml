@@ -1,0 +1,4 @@
+- name: canvas_server_steps
+  tag: master
+  service: test
+  command: bundle exec rspec spec
