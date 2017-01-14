@@ -11,6 +11,8 @@ gem 'celluloid-io'
 
 gem 'msgpack'
 
+gem 'ws2812'
+
 group :development do
   gem 'rubysdl'
 end

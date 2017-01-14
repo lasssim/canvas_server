@@ -10,5 +10,7 @@ module Printer
       raise NotImplementedError
     end
 
+    def startup_animation
+    end
   end
 end

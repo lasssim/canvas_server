@@ -16,7 +16,7 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-ENV['RACK_ENV'] = 'test'
+ENV['APP_ENV'] = 'test'
 require 'rspec/its'
 require 'rspec/retry'
 

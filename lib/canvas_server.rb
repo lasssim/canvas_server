@@ -24,6 +24,7 @@ class CanvasServer
   private
 
   def run
+    printer.startup_animation
     loop do
       async.handle_connection(server.accept)
     end

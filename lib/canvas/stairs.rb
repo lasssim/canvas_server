@@ -1,9 +1,5 @@
 module Canvas
-  class Stairs
-    def initialize(opts:{})
-      super
-    end
-
+  class Stairs < Base
     def pixels
       @pixels ||= begin
         Hash[pixel_coordinates.map { |pc| [pc, default_pixel] }]
