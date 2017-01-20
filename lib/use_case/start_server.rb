@@ -16,7 +16,7 @@ module UseCase
 
     def canvas
       config.canvas_class.new(
-        opts: config.canvas_opts
+        opts: config.canvas_opts || {}
       )
     end
 
@@ -24,7 +24,7 @@ module UseCase
       config.printer_class.new(
         canvas: canvas,
         logger: logger,
-        opts: config.printer_opts
+        opts: config.printer_opts || {}
       )
     end
 

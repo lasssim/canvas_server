@@ -5,10 +5,12 @@ module Printer
       canvas.pixels.each do |(x, y), pixel|
         ws[x][y] = pixel_to_color(pixel)
       end
+      ws_open
       ws_show
     end
 
     def startup_animation
+      ws_open
       100.times do 
         sparkle(255, 255, 255)
       end
@@ -34,6 +36,10 @@ module Printer
       ws.each(&:show)
     end
 
+    def ws_open
+      ws.each(&:open)
+    end
+
     def pixel_to_color(pixel)
       Ws2812::Color.new(*pixel.to_a)
     end
@@ -46,8 +52,10 @@ module Printer
       ws.each do |w|
         led_nr = rand(w.count)
         w.set(led_nr, r, g, b)
-        sleep(0.001)
-        w.set(0, 0, 0)
+        ws_show
+        sleep(0.01)
+        w.set(led_nr, 0, 0, 0)
+        ws_show
       end
     end
   end
