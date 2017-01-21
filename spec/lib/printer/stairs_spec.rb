@@ -21,6 +21,9 @@ module Printer
       def count
         1
       end
+
+      def open
+      end
     end
 
     before do
