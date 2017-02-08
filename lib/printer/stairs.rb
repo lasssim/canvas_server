@@ -45,7 +45,7 @@ module Printer
     end
 
     def brightness
-      10
+      80
     end
 
     def sparkle(r, g, b)
